@@ -5,3 +5,5 @@ I just added dendro (not this version, ask dm Penelopeep#7963) and changed it to
 
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
+
+### Also this code is ugly, don't look, it's my first time trying things is java
