@@ -8,6 +8,10 @@ Use /se <element> or /switchelement <element> <br>
 Elements: white/anemo/geo/electro
 white = no element
 
+### Issues
+
+I know that descriptions are missing, don't use issues on github, I promise that I'll fix that
+
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
 
