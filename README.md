@@ -3,6 +3,11 @@ Simple, mostly stolen script from one of pr in official gc, which allows to quic
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
 I just added dendro (not this version, ask dm Penelopeep#7963) and changed it to plugin.
 
+## Usage
+Use /se <element> or /switchelement <element> <br>
+Elements: white/anemo/geo/electro
+white = no element
+
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
 
