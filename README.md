@@ -1,5 +1,5 @@
 # SwitchElement
-Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.
+Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 
 ### Version
