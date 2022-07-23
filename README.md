@@ -5,17 +5,13 @@ I just added dendro and changed it to plugin.
 
 ## Usage
 Use /se <element> or /switchelement <element> <br>
-Elements: white/anemo/geo/electro/dendro
-white = no element
+Elements: white/anemo/geo/electro/dendro <br>
+white = no element <br><br>
 For dendro you need to have:
 1. Genshin 2.8.5 beta
 2. Grasscutter supporting that version
 3. Dendro files from Endg4me_#7769 (<a href='https://discord.com/channels/997259363158859786/997566696137175144/998975316779356231'>From here if you're in Frontrooms</a>)
 
-
-### Issues
-
-I know that descriptions are missing, don't use issues on github, I promise that I'll fix that
 
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
