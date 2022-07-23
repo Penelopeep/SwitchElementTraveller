@@ -12,12 +12,12 @@ import test.gc.switchele.Switchele;
 import java.util.ArrayList;
 import java.util.List;
 
-@Command(label = "switchelement", description = "Switch element for traveller", usage = "switchelement [White/Anemo/Geo/Electro]", aliases = {"se"}, permission = "player.switchElement", threading = true)
+@Command(label = "switchelement", description = "Switch element for traveller", usage = "switchelement [White/Anemo/Geo/Electro]", aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.usage");
+            CommandHandler.sendMessage(sender, "Usage: /se OR /switchelement [White/Anemo/Geo/Electro]");
             return;
         }
         if (sender == null) {
@@ -36,7 +36,7 @@ public class SwitchElement implements CommandHandler {
         };
 
         if (elementId == null) {
-            CommandHandler.sendMessage(sender, "commands.switchElement.invalidElement");
+            CommandHandler.sendMessage(sender, "Invalid element");
             return;
         }
 
@@ -55,7 +55,8 @@ public class SwitchElement implements CommandHandler {
                     avatar.save();
                 }
             }
-            CommandHandler.sendTranslatedMessage(sender, "commands.switchElement.success", element);
+            String success = String.format("Successfully changed element to %s", element);
+            CommandHandler.sendMessage(sender,success);
             int scene = sender.getSceneId();
             sender.getWorld().transferPlayerToScene(sender, 1, sender.getPos());
             sender.getWorld().transferPlayerToScene(sender, scene, sender.getPos());
