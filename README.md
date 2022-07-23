@@ -12,6 +12,12 @@ For dendro you need to have:
 2. Grasscutter supporting that version
 3. Dendro files from Endg4me_#7769 (<a href='https://discord.com/channels/997259363158859786/997566696137175144/998975316779356231'>From here if you're in Frontrooms</a>)
 
+## Building
+I don't know why would you want to build it but:
+1. Download maven from apache website
+2. Open command prompt/powershell in your project folder
+3. Run <b>mvn package</b>
+4. Now jar file should be in new tasrget folder
 
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
