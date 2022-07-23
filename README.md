@@ -8,6 +8,12 @@ Use /se <element> or /switchelement <element> <br>
 Elements: white/anemo/geo/electro <br>
 white = no element <br><br>
 
+## Building
+I don't know why would you want to build it but:
+1. Download maven from apache website
+2. Open command prompt/powershell in your project folder
+3. Run <b>mvn package</b>
+4. Now jar file should be in new tasrget folder
 
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
