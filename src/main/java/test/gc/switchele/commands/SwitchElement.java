@@ -12,7 +12,7 @@ import test.gc.switchele.Switchele;
 import java.util.ArrayList;
 import java.util.List;
 
-@Command(label = "switchelement", description = "Switch element for traveller", usage = "switchelement [White/Anemo/Geo/Electro]", aliases = {"se"}, threading = true)
+@Command(label = "switchelement", usage = "switchelement [White/Anemo/Geo/Electro]", aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -58,8 +58,8 @@ public class SwitchElement implements CommandHandler {
             String success = String.format("Successfully changed element to %s", element);
             CommandHandler.sendMessage(sender,success);
             int scene = sender.getSceneId();
-            sender.getWorld().transferPlayerToScene(sender, 1, sender.getPos());
-            sender.getWorld().transferPlayerToScene(sender, scene, sender.getPos());
+            sender.getWorld().transferPlayerToScene(sender, 1, sender.getPosition());
+            sender.getWorld().transferPlayerToScene(sender, scene, sender.getPosition());
             sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
         } catch (Exception ignored) {
             ignored.printStackTrace();
