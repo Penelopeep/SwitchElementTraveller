@@ -1,16 +1,13 @@
 # SwitchElement
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
-I just added dendro (not this version, ask dm Penelopeep#7963) and changed it to plugin.
+I just changed it to plugin.
 
 ## Usage
 Use /se <element> or /switchelement <element> <br>
-Elements: white/anemo/geo/electro
-white = no element
+Elements: white/anemo/geo/electro <br>
+white = no element <br><br>
 
-### Issues
-
-I know that descriptions are missing, don't use issues on github, I promise that I'll fix that
 
 ### Version
 The plugin is based on plugin template from Grasscutters GitHub.
