@@ -11,7 +11,7 @@ white = no element <br><br>
 ## Building
 I don't know why would you want to build it but:
 1. Download maven from apache website
-2. Open command prompt/powershell in your project folder
+2. Open command prompt/powershell in your project folder (Sorry Linux and MacOS users, you'll need to find your own way for this)
 3. Run <b>mvn package</b>
 4. Now jar file should be in new tasrget folder
 
