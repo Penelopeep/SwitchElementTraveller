@@ -12,12 +12,12 @@ import test.gc.switchele.Switchele;
 import java.util.ArrayList;
 import java.util.List;
 
-@Command(label = "switchelement", description = "Switch element for traveller", usage = "switchelement [White/Anemo/Geo/Electro]", aliases = {"se"}, threading = true)
+@Command(label = "switchelement", description = "Switch element for traveller", usage = "switchelement [White/Anemo/Geo/Electro/Dendro]", aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, "Usage: /se OR /switchelement [White/Anemo/Geo/Electro]");
+            CommandHandler.sendMessage(sender, "Usage: /se OR /switchelement [White/Anemo/Geo/Electro/Dendro]");
             return;
         }
         if (sender == null) {
@@ -32,6 +32,7 @@ public class SwitchElement implements CommandHandler {
             case "anemo" -> 504;
             case "geo" -> 506;
             case "electro" -> 507;
+            case "dendro" -> 708;
             default -> null;
         };
 
