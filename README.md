@@ -1,7 +1,7 @@
 # SwitchElement
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
-I just added dendro and changed it to plugin.
+I just added dendro and changed it to plugin. <br>
 Credits to hartie95#8966 for amazing help with rewriting code
 
 ## Usage
