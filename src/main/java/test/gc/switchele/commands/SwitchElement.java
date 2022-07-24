@@ -17,24 +17,23 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-=======
-@Command(label = "switchelement", description = "Switch element for traveller", usage = "switchelement [White/Anemo/Geo/Electro/Dendro]", aliases = {"se"}, threading = true)
+@Command(label = "switchelement", usage = "switchelement [White/Anemo/Geo/Electro/Dendro]", aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
 
     @Nullable
     private static final Method getPositionMethod = VersionSupportHelper.getPositionMethod();
-    private static final String failedSuccessfullyMessage = "Successfully changed element to %s, but failed to reload scene. Manually reload scene to see the changed";
+    private static final String failedSuccessfullyMessage = "Successfully changed traveller to %s, but failed to reload scene. Manually reload scene to see the changed";
 
     private Element getElementFromString(String elementString) {
         return switch (elementString.toLowerCase()) {
-            case "white", "common" -> Element.COMMON;
-            case "fire", "pyro" -> Element.FIRE;
-            case "water", "hydro" -> Element.WATER;
-            case "wind", "anemo", "air" -> Element.WIND;
-            case "ice", "cryo" -> Element.ICE;
-            case "rock", "geo" -> Element.ROCK;
-            case "electro" -> Element.ELECTRO;
-            case "grass", "dendro", "plant" -> Element.GRASS;
+            case "white", "common" -> Element.elementless;
+            case "fire", "pyro" -> Element.pyro;
+            case "water", "hydro" -> Element.hydro;
+            case "wind", "anemo", "air" -> Element.anemo;
+            case "ice", "cryo" -> Element.cryo;
+            case "rock", "geo" -> Element.geo;
+            case "electro" -> Element.electro;
+            case "grass", "dendro", "plant" -> Element.dendro;
             default -> null;
         };
     }
@@ -83,7 +82,7 @@ public class SwitchElement implements CommandHandler {
                 sender.getWorld().transferPlayerToScene(sender, 1, senderPos);
                 sender.getWorld().transferPlayerToScene(sender, scene, senderPos);
                 sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
-                message = String.format("Successfully changed element to %s", element.name());
+                message = String.format("Successfully changed traveller to %s", element.name());
             } catch (IllegalAccessException | InvocationTargetException e) {
                 message = String.format(failedSuccessfullyMessage, element.name());
             }
