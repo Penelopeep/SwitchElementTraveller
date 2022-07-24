@@ -1,13 +1,6 @@
 package test.gc.switchele;
-
 import emu.grasscutter.plugin.Plugin;
-import emu.grasscutter.server.event.EventHandler;
-import emu.grasscutter.server.event.HandlerPriority;
-import emu.grasscutter.server.event.player.PlayerJoinEvent;
-
 import test.gc.switchele.commands.SwitchElement;
-import test.gc.switchele.commands.*;
-
 /**
  * The Grasscutter plugin template.
  * This is the main class for the plugin.
@@ -32,7 +25,7 @@ public final class Switchele extends Plugin {
         instance = this;
         
         // Log a plugin status message.
-        this.getLogger().info("The example plugin has been loaded.");
+        this.getLogger().info("The SwitchElement has been loaded.");
     }
 
     /**
@@ -43,7 +36,7 @@ public final class Switchele extends Plugin {
         this.getHandle().registerCommand(new SwitchElement());
 
         // Log a plugin status message.
-        this.getLogger().info("The example plugin has been enabled.");
+        this.getLogger().info("The SwitchElement has been enabled.");
     }
 
     /**
@@ -51,6 +44,6 @@ public final class Switchele extends Plugin {
      */
     @Override public void onDisable() {
         // Log a plugin status message.
-        this.getLogger().info("The example plugin has been disabled.");
+        this.getLogger().info("The SwitchElement has been disabled.");
     }
 }
