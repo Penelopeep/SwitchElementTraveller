@@ -11,7 +11,6 @@ white = no element <br><br>
 For dendro you need to have:
 1. Genshin 2.8.5 beta
 2. Grasscutter supporting that version
-3. Dendro files from Endg4me_#7769 (<a href='https://discord.com/channels/997259363158859786/997566696137175144/998975316779356231'>From here if you're in Frontrooms</a>)
 
 
 ## Building
