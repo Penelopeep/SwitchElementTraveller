@@ -1,3 +1,7 @@
+# If you're having problem with plugin similar to this:<br>
+<img src=https://media.discordapp.net/attachments/1000455127808872469/1001068330242818118/unknown.png><br>
+<a href="https://cdn.discordapp.com/attachments/1001059046650024017/1001066457964232734/SwitchElement-Tighnari.jar"> Then use this workaround version</a>, if it's still not working then you're out of luck<br>
+
 # SwitchElement
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
@@ -25,3 +29,4 @@ I don't know why would you want to build it but:
 The plugin is based on plugin template from Grasscutters GitHub.
 
 #### Also this code is ugly, don't look, it's my first time trying things is java
+#### If you have any question then dm me: Penelopeep#7963
