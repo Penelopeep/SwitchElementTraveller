@@ -1,8 +1,8 @@
 {
-    "usage": "Usage: /se or /switchelement <element>",
-    "consoleUsage": "SwitchElement command couldn't be called by console.",
-    "invalidElement": "Invalid element",
-    "changeSuccess": "Successfully changed traveller to %s",
-    "changeFailed": "Failed to change the Element",
-    "failedSuccess": "Successfully changed traveller to %s, but failed to reload scene. Manually reload scene to see the changed"
+    "usage": "用法:服务器虚拟好友 聊天框输入 /se 或 /switchelement <元素>",
+    "consoleUsage": "控制台无法调用插件SwitchElement命令",
+    "invalidElement": "无效的元素",
+    "changeSuccess": "旅行者 元素属性成功切换为 %s",
+    "changeFailed": "旅行者 元素属性切换失败",
+    "failedSuccess": "旅行者 元素属性成功切换为 %s, 请从新登录或传送到 [渊下宫]刷新场景以查看效果"
 }
