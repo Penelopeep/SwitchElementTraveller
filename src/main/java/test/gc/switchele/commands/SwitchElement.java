@@ -9,6 +9,7 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
+import test.gc.switchele.LanguageHelper;
 import test.gc.switchele.Switchele;
 import test.gc.switchele.VersionSupportHelper;
 
@@ -53,7 +54,8 @@ public class SwitchElement implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, "Usage: /se OR /switchelement [White/Anemo/Geo/Electro/Dendro]");
+            CommandHandler.sendMessage(sender, "this will never make to github");
+            LanguageHelper.reader("usage");
             return;
         }
         if (sender == null) {
