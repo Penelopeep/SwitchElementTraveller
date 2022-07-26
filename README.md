@@ -1,7 +1,6 @@
 # Looking for help: <br>
 Since with the newest update I added multi-language support now I need translators for missing languages:<br>
 - es-ES
-- fr-FR
 - ro-RO
 - zh-CN
 - zh-TW <br>
