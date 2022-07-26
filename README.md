@@ -13,7 +13,7 @@ You'll be included in this readme
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
 I just added dendro and changed it to plugin. <br>
-Credits:
+### Credits:
 - hartie95#8966 for amazing help with rewriting code
 - RomanF#0609 for Russian translation
 - Praë#0009 for French translations
