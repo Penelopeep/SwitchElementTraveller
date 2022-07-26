@@ -1,0 +1,8 @@
+{
+    "usage": "Usage: /se or /switchelement <element>",
+    "consoleUsage": "SwitchElement command couldn't be called by console.",
+    "invalidElement": "Invalid element",
+    "changeSuccess": "Successfully changed traveller to %s",
+    "changeFailed": "Failed to change the Element",
+    "failedSuccess": "Successfully changed traveller to %s, but failed to reload scene. Manually reload scene to see the changed"
+}

@@ -1,0 +1,8 @@
+{
+  "usage": "Użycie: /se lub /switchelement <element>",
+  "consoleUsage": "SwitchElement nie powinno być użyte przez konsolę.",
+  "invalidElement": "Nieprawidłowy element",
+  "changeSuccess": "Pomyślnie zmieniono element na %s",
+  "changeFailed": "Nie udało się zmienić elementu",
+  "failedSuccess": "Pomyślnie zmieniono element na %s, ale nie udało się przeładować sceny. Przeładuj ją ręcznie aby zobaczyć zmiany"
+}

@@ -23,7 +23,6 @@ public class SwitchElement implements CommandHandler {
 
     @Nullable
     private static final Method getPositionMethod = VersionSupportHelper.getPositionMethod();
-    private static final String failedSuccessfullyMessage = "Successfully changed traveller to %s, but failed to reload scene. Manually reload scene to see the changed";
 
     private Element getElementFromString(String elementString) {
         return switch (elementString.toLowerCase()) {
@@ -54,18 +53,17 @@ public class SwitchElement implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, "this will never make to github");
-            LanguageHelper.reader("usage");
+            CommandHandler.sendMessage(sender, LanguageHelper.reader("usage", sender.getAccount().getUsername()));
             return;
         }
         if (sender == null) {
-            Switchele.getInstance().getLogger().info("SwitchElement command couldn't be called by console.");
+            Switchele.getInstance().getLogger().info(LanguageHelper.reader("consoleUsage","gc-console"));
             return;
         }
 
         Element element = getElementFromString(args.get(0));
         if (element == null) {
-            CommandHandler.sendMessage(sender, "Invalid element");
+            CommandHandler.sendMessage(sender, LanguageHelper.reader("invalidElement", sender.getAccount().getUsername()));
             return;
         }
 
@@ -73,7 +71,7 @@ public class SwitchElement implements CommandHandler {
         boolean femaleSuccess = changeAvatarElement(sender, GameConstants.MAIN_CHARACTER_FEMALE, element);
         if (maleSuccess || femaleSuccess) {
             if (getPositionMethod == null) {
-                String message = String.format(failedSuccessfullyMessage, element.name());
+                String message = String.format(LanguageHelper.reader("failedSuccess", sender.getAccount().getUsername()), element.name());
                 CommandHandler.sendMessage(sender, message);
                 return;
             }
@@ -84,13 +82,13 @@ public class SwitchElement implements CommandHandler {
                 sender.getWorld().transferPlayerToScene(sender, 1, senderPos);
                 sender.getWorld().transferPlayerToScene(sender, scene, senderPos);
                 sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
-                message = String.format("Successfully changed traveller to %s", element.name());
+                message = String.format(LanguageHelper.reader("changeSuccess", sender.getAccount().getUsername()), element.name());
             } catch (IllegalAccessException | InvocationTargetException e) {
-                message = String.format(failedSuccessfullyMessage, element.name());
+                message = String.format(LanguageHelper.reader("failedSuccess", sender.getAccount().getUsername()), element.name());
             }
             CommandHandler.sendMessage(sender, message);
         } else {
-            CommandHandler.sendMessage(sender, "Failed to change the Element.");
+            CommandHandler.sendMessage(sender, LanguageHelper.reader("changeFailed", sender.getAccount().getUsername()));
         }
     }
 }
