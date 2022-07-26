@@ -5,6 +5,7 @@ Since with the newest update I added multi-language support now I need translato
 - ro-RO
 - zh-CN
 - zh-TW <br>
+
 The task is simple, I just need you to translate 6 lines of text <br>
 <a href="https://github.com/Penelopeep/SwitchElementTraveller/blob/Main/src/main/resources/en_US.json">The file to translate is this</a> and translated one send me on discord <b>Penelopeep#7963</b>, or make pull request if you want ¯\\_(ツ)_/¯ <br>
 You'll be included in this readme after I get every language
