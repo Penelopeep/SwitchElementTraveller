@@ -1,3 +1,14 @@
+# Looking for help: <br>
+Since with the newest update I added multi-language support now I need translators for missing languages:<br>
+- es-ES
+- fr-FR
+- ro-RO
+- zh-CN
+- zh-TW
+The task is simple, I just need you to translate 6 lines of text <br>
+<a href="https://github.com/Penelopeep/SwitchElementTraveller/blob/Main/src/main/resources/en_US.json">The file to translate is this</a> and translated one send me on discord <b>Penelopeep#7963</b>, or make pull request if you want ¯\\_(ツ)_/¯ <br>
+You'll be included in this readme after I get every language
+
 # SwitchElement
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
