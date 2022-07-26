@@ -17,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-@Command(label = "switchelement", usage = "switchelement [White/Anemo/Geo/Electro/Dendro]", aliases = {"se"}, threading = true)
+@Command(label = "switchelement", usage = "<White|Anemo|Geo|Electro|Dendro>", aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
 
     @Nullable
@@ -38,8 +38,8 @@ public class SwitchElement implements CommandHandler {
         };
     }
 
-    private boolean changeAvatarElement(Player sender, int avatarId, Element element) {
-        Avatar avatar = sender.getAvatars().getAvatarById(avatarId);
+    private boolean changeAvatarElement(Player player, int avatarId, Element element) {
+        Avatar avatar = player.getAvatars().getAvatarById(avatarId);
         AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(element.getSkillRepoId(avatarId));
         if (avatar == null || skillDepot == null) {
             return false;
@@ -53,11 +53,7 @@ public class SwitchElement implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, "Usage: /se OR /switchelement [White/Anemo/Geo/Electro/Dendro]");
-            return;
-        }
-        if (sender == null) {
-            Switchele.getInstance().getLogger().info("SwitchElement command couldn't be called by console.");
+            sendUsageMessage(sender);
             return;
         }
 
@@ -67,21 +63,21 @@ public class SwitchElement implements CommandHandler {
             return;
         }
 
-        boolean maleSuccess = changeAvatarElement(sender, GameConstants.MAIN_CHARACTER_MALE, element);
-        boolean femaleSuccess = changeAvatarElement(sender, GameConstants.MAIN_CHARACTER_FEMALE, element);
+        boolean maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
+        boolean femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
         if (maleSuccess || femaleSuccess) {
             if (getPositionMethod == null) {
                 String message = String.format(failedSuccessfullyMessage, element.name());
                 CommandHandler.sendMessage(sender, message);
                 return;
             }
-            int scene = sender.getSceneId();
+            int scene = targetPlayer.getSceneId();
             String message;
             try {
-                Position senderPos = (Position) getPositionMethod.invoke(sender);
-                sender.getWorld().transferPlayerToScene(sender, 1, senderPos);
-                sender.getWorld().transferPlayerToScene(sender, scene, senderPos);
-                sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
+                Position senderPos = (Position) getPositionMethod.invoke(targetPlayer);
+                targetPlayer.getWorld().transferPlayerToScene(targetPlayer, 1, senderPos);
+                targetPlayer.getWorld().transferPlayerToScene(targetPlayer, scene, senderPos);
+                targetPlayer.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(targetPlayer));
                 message = String.format("Successfully changed traveller to %s", element.name());
             } catch (IllegalAccessException | InvocationTargetException e) {
                 message = String.format(failedSuccessfullyMessage, element.name());
