@@ -8,13 +8,16 @@ Since with the newest update I added multi-language support now I need translato
 
 The task is simple, I just need you to translate 6 lines of text <br>
 <a href="https://github.com/Penelopeep/SwitchElementTraveller/blob/Main/src/main/resources/en_US.json">The file to translate is this</a> and translated one send me on discord <b>Penelopeep#7963</b>, or make pull request if you want ¯\\_(ツ)_/¯ <br>
-You'll be included in this readme after I get every language
+You'll be included in this readme
 
 # SwitchElement
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
 Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287 <br>
 I just added dendro and changed it to plugin. <br>
-Credits to hartie95#8966 for amazing help with rewriting code
+Credits:
+- hartie95#8966 for amazing help with rewriting code
+- RomanF#0609 for Russian translation
+- Praë#0009 for French translations
 
 ## Usage
 Use /se <element> or /switchelement <element> <br>
