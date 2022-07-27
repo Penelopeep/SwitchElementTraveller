@@ -1,6 +1,7 @@
 package test.gc.switchele.commands;
 
 import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
@@ -10,7 +11,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
 import test.gc.switchele.LanguageHelper;
-import test.gc.switchele.Switchele;
 import test.gc.switchele.VersionSupportHelper;
 
 import javax.annotation.Nullable;
@@ -18,7 +18,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-@Command(label = "switchelement", usage = "switchelement [White/Anemo/Geo/Electro/Dendro]", aliases = {"se"}, threading = true)
+@Command(label = "switchelement",usage="anemo|geo|electro|dendro",aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
 
     @Nullable
@@ -49,46 +49,65 @@ public class SwitchElement implements CommandHandler {
         avatar.save();
         return true;
     }
-
     @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
+    public void execute(Player sender,Player targetPlayer, List<String> args) {
         if (args.size() != 1) {
-            CommandHandler.sendMessage(sender, LanguageHelper.reader("usage", sender.getAccount().getUsername()));
+            if (sender != null) {
+                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("usage", targetPlayer.getAccount().getUsername()));
+            }
+            else {
+                Grasscutter.getLogger().info(LanguageHelper.reader("usage", targetPlayer.getAccount().getUsername()));
+            }
             return;
         }
-        if (sender == null) {
-            Switchele.getInstance().getLogger().info(LanguageHelper.reader("consoleUsage","gc-console"));
-            return;
-        }
-
         Element element = getElementFromString(args.get(0));
         if (element == null) {
-            CommandHandler.sendMessage(sender, LanguageHelper.reader("invalidElement", sender.getAccount().getUsername()));
+            if (sender != null) {
+                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("invalidElement", targetPlayer.getAccount().getUsername()));
+            }
+            else {
+                Grasscutter.getLogger().info(LanguageHelper.reader("invalidElement", targetPlayer.getAccount().getUsername()));
+            }
             return;
         }
 
-        boolean maleSuccess = changeAvatarElement(sender, GameConstants.MAIN_CHARACTER_MALE, element);
-        boolean femaleSuccess = changeAvatarElement(sender, GameConstants.MAIN_CHARACTER_FEMALE, element);
+        boolean maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
+        boolean femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
         if (maleSuccess || femaleSuccess) {
             if (getPositionMethod == null) {
-                String message = String.format(LanguageHelper.reader("failedSuccess", sender.getAccount().getUsername()), element.name());
-                CommandHandler.sendMessage(sender, message);
+                String message = String.format(LanguageHelper.reader("failedSuccess", targetPlayer.getAccount().getUsername()), element.name());
+                if (sender != null) {
+                    CommandHandler.sendMessage(targetPlayer, message);
+                }
+                else {
+                    Grasscutter.getLogger().info(message);
+                }
                 return;
             }
-            int scene = sender.getSceneId();
+            int scene = targetPlayer.getSceneId();
             String message;
             try {
-                Position senderPos = (Position) getPositionMethod.invoke(sender);
-                sender.getWorld().transferPlayerToScene(sender, 1, senderPos);
-                sender.getWorld().transferPlayerToScene(sender, scene, senderPos);
-                sender.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(sender));
-                message = String.format(LanguageHelper.reader("changeSuccess", sender.getAccount().getUsername()), element.name());
+                Position targetPlayerPos = (Position) getPositionMethod.invoke(targetPlayer);
+                targetPlayer.getWorld().transferPlayerToScene(targetPlayer, 1, targetPlayerPos);
+                targetPlayer.getWorld().transferPlayerToScene(targetPlayer, scene, targetPlayerPos);
+                targetPlayer.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(targetPlayer));
+                message = String.format(LanguageHelper.reader("changeSuccess", targetPlayer.getAccount().getUsername()), element.name());
             } catch (IllegalAccessException | InvocationTargetException e) {
-                message = String.format(LanguageHelper.reader("failedSuccess", sender.getAccount().getUsername()), element.name());
+                message = String.format(LanguageHelper.reader("failedSuccess", targetPlayer.getAccount().getUsername()), element.name());
             }
-            CommandHandler.sendMessage(sender, message);
+            if (sender != null) {
+                CommandHandler.sendMessage(targetPlayer, message);
+            }
+            else {
+                Grasscutter.getLogger().info(message);
+            }
         } else {
-            CommandHandler.sendMessage(sender, LanguageHelper.reader("changeFailed", sender.getAccount().getUsername()));
+            if (sender != null) {
+                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("changeFailed", targetPlayer.getAccount().getUsername()));
+            }
+            else {
+                Grasscutter.getLogger().info(LanguageHelper.reader("changeFailed", targetPlayer.getAccount().getUsername()));
+            }
         }
     }
 }
