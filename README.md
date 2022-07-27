@@ -20,7 +20,7 @@ Credits to hartie95#8966 for amazing help with rewriting code
 ## Usage
 Use /se <element> or /switchelement <element> <br>
 Elements: white/anemo/geo/electro/dendro <br>
-white = no element <br
+white = no element <br>
 Also you can use alternative names:
 - <b>Anemo</b>: Air, Wind
 - <b>Cryo</b>: Ice
