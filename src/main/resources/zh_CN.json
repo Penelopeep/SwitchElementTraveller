@@ -1,0 +1,8 @@
+{
+    "usage": "用法：/se 或者 /switchelement <元素>",
+    "consoleUsage": "控制台无法调用SwitchElement命令",
+    "invalidElement": "无效的元素",
+    "changeSuccess": "已成功将旅行者更改为 %s",
+    "changeFailed": "未能更改旅行者元素",
+    "failedSuccess": "成功将旅行者更改为 %s，但未能重新加载场景。请手动重新加载场景以查看更改后的效果"
+}

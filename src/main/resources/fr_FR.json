@@ -1,0 +1,8 @@
+{
+    "usage": "Utilisation: /se ou /switchelement <élément>",
+    "consoleUsage": "La commande SwitchElement command n'a pas pu être appelé par la console.",
+    "invalidElement": "Élément invalide",
+    "changeSuccess": "Le changement d'élément en %s du Voyageur a été réalisé avec succès",
+    "changeFailed": "Échec du changement d'élément",
+    "failedSuccess": "Le changement d'élément en %s du Voyageur a été réalisé avec succès, mais le chargement de la map a échoué. Veuillez relancer le jeu afin de voir les modifications"
+}
