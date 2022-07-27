@@ -2,7 +2,6 @@
 Since with the newest update I added multi-language support now I need translators for missing languages:<br>
 - es-ES
 - ro-RO
-- zh-CN
 - zh-TW <br>
 
 The task is simple, I just need you to translate 6 lines of text <br>
@@ -15,7 +14,9 @@ I just changed it to plugin and added multilanguage support. <br>
 ### Credits:
 - hartie95#8966 for amazing help with rewriting code
 - RomanF#0609 for Russian translation
+- tingtong#5633 and <a href="https://github.com/millet6">millet6</a> for Chinese translation
 - Praë#0009 for French translations
+
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 
 ## Usage
