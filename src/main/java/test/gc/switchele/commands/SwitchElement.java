@@ -70,9 +70,13 @@ public class SwitchElement implements CommandHandler {
             }
             return;
         }
-
-        boolean maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
-        boolean femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
+        boolean maleSuccess = false;
+        boolean femaleSuccess = false;
+        if(targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
+            maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
+        } else if (targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
+            femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
+        }
         if (maleSuccess || femaleSuccess) {
             if (getPositionMethod == null) {
                 String message = String.format(LanguageHelper.reader("failedSuccess", targetPlayer.getAccount().getUsername()), element.name());
