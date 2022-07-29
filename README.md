@@ -19,6 +19,7 @@ I just changed it to plugin and added multilanguage support. <br>
 - RomanF#0609 for Russian translation
 - tingtong#5633 and <a href="https://github.com/millet6">millet6</a> for Chinese translation
 - Praë#0009 for French translations
+- Dark master#9831 for Arabic translations
 
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 
