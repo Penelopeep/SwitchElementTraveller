@@ -10,7 +10,7 @@ public enum Element {
     cryo(505, 705),
     geo(506, 706),
     electro(507, 707),
-    dendro(508, 708);
+    dendro(708, 708);
     private final int boyId;
     private final int girlId;
 
