@@ -1,0 +1,8 @@
+{
+    "usage": "Usage: /se or /switchelement <element>",
+    "invalidElement": "Invalid element",
+    "changeSuccess": "Successfully changed traveller to %s",
+    "changeFailed": "Failed to change the element",
+    "failedSuccess": "Successfully changed traveller to %s, but failed to reload scene. Manually reload scene to see the changed",
+    "invalidCons": "Invalid constellation number"
+}
