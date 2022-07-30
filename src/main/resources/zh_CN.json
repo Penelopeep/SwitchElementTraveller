@@ -4,5 +4,14 @@
     "invalidElement": "无效的元素",
     "changeSuccess": "已成功将旅行者更改为 %s",
     "changeFailed": "未能更改旅行者元素",
-    "failedSuccess": "成功将旅行者更改为 %s，但未能重新加载场景。请手动重新加载场景以查看更改后的效果"
+    "failedSuccess": "成功将旅行者更改为 %s，但未能重新加载场景。请手动重新加载场景以查看更改后的效果",
+    "errorint": "无效数值%s",
+    "elementless":"空",
+    "pyro":"火",
+    "hydro":"水",
+    "anemo":"风",
+    "cryo": "冰",
+    "geo":"岩",
+    "electro":"雷",
+    "dendro":"草"
 }

@@ -1,24 +1,32 @@
 package test.gc.switchele.commands;
 
 import emu.grasscutter.GameConstants;
+import test.gc.switchele.LanguageHelper;
 
 public enum Element {
-    elementless(501, 701),
-    pyro(502, 702),
-    hydro(503, 703),
-    anemo(504, 704),
-    cryo(505, 705),
-    geo(506, 706),
-    electro(507, 707),
-    dendro(708, 708);
+    elementless(1),
+    pyro(2),
+    hydro(3),
+    anemo(4),
+    cryo(5),
+    geo(6),
+    electro(7),
+    dendro(8);
     private final int boyId;
     private final int girlId;
-
-    Element(int boyId, int girlId) {
-        this.boyId = boyId;
-        this.girlId = girlId;
+    private final int ElementId;
+    public int plv=0;
+    Element(int elementId) {
+        this.ElementId=elementId;
+        this.boyId = 500+ElementId;
+        this.girlId = 700+ElementId;
     }
-    
+    public String getname(String Username){
+        return  LanguageHelper.reader(name(), Username)+String.valueOf(plv);
+    }
+    public int getTalentId(int index) {
+        return (this.ElementId+3)*10+index+1;
+    }
     public int getSkillRepoId(int avatarId) {
         return avatarId == GameConstants.MAIN_CHARACTER_MALE ? boyId : girlId;
     }
