@@ -1,6 +1,5 @@
 {
     "usage": "Usage: /se or /switchelement <element>",
-    "consoleUsage": "SwitchElement command couldn't be called by console.",
     "invalidElement": "Invalid element",
     "changeSuccess": "Successfully changed traveller to %s",
     "changeFailed": "Failed to change the element",
