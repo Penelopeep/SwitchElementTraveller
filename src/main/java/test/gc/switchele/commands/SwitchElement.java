@@ -10,6 +10,7 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
+import test.gc.switchele.ConstellationsHandler;
 import test.gc.switchele.LanguageHelper;
 import test.gc.switchele.VersionSupportHelper;
 
@@ -51,35 +52,57 @@ public class SwitchElement implements CommandHandler {
     }
     @Override
     public void execute(Player sender,Player targetPlayer, List<String> args) {
-        if (args.size() != 1) {
+        String UserName=targetPlayer.getAccount().getUsername();
+        if (args.size() < 1) {
             if (sender != null) {
-                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("usage", targetPlayer.getAccount().getUsername()));
+                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("usage", UserName));
             }
             else {
-                Grasscutter.getLogger().info(LanguageHelper.reader("usage", targetPlayer.getAccount().getUsername()));
+                Grasscutter.getLogger().info(LanguageHelper.reader("usage", UserName));
             }
             return;
         }
         Element element = getElementFromString(args.get(0));
         if (element == null) {
             if (sender != null) {
-                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("invalidElement", targetPlayer.getAccount().getUsername()));
+                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("invalidElement", UserName));
             }
             else {
-                Grasscutter.getLogger().info(LanguageHelper.reader("invalidElement", targetPlayer.getAccount().getUsername()));
+                Grasscutter.getLogger().info(LanguageHelper.reader("invalidElement", UserName));
             }
             return;
+        }
+        int constellation = 0;
+        if (args.size() > 1) {
+            try {
+                constellation = Integer.parseInt(args.get(1));
+                if (constellation>6){
+                    constellation=6;
+                } else if (constellation<0) {
+                   constellation = 0;
+                }
+            }
+            catch (Exception e){
+                if (sender != null) {
+                    CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("invalidCons", UserName));
+                }
+                else {
+                    Grasscutter.getLogger().info(LanguageHelper.reader("invalidCons", UserName));
+                }
+            }
         }
         boolean maleSuccess = false;
         boolean femaleSuccess = false;
         if(targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
             maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
+            ConstellationsHandler.change(targetPlayer, element, constellation);
         } else if (targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
             femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
+            ConstellationsHandler.change(targetPlayer, element, constellation);
         }
         if (maleSuccess || femaleSuccess) {
             if (getPositionMethod == null) {
-                String message = String.format(LanguageHelper.reader("failedSuccess", targetPlayer.getAccount().getUsername()), element.name());
+                String message = String.format(LanguageHelper.reader("failedSuccess", UserName), element.name());
                 if (sender != null) {
                     CommandHandler.sendMessage(targetPlayer, message);
                 }
@@ -95,9 +118,9 @@ public class SwitchElement implements CommandHandler {
                 targetPlayer.getWorld().transferPlayerToScene(targetPlayer, 1, targetPlayerPos);
                 targetPlayer.getWorld().transferPlayerToScene(targetPlayer, scene, targetPlayerPos);
                 targetPlayer.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(targetPlayer));
-                message = String.format(LanguageHelper.reader("changeSuccess", targetPlayer.getAccount().getUsername()), element.name());
+                message = String.format(LanguageHelper.reader("changeSuccess", UserName), element.name());
             } catch (IllegalAccessException | InvocationTargetException e) {
-                message = String.format(LanguageHelper.reader("failedSuccess", targetPlayer.getAccount().getUsername()), element.name());
+                message = String.format(LanguageHelper.reader("failedSuccess", UserName), element.name());
             }
             if (sender != null) {
                 CommandHandler.sendMessage(targetPlayer, message);
@@ -107,10 +130,10 @@ public class SwitchElement implements CommandHandler {
             }
         } else {
             if (sender != null) {
-                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("changeFailed", targetPlayer.getAccount().getUsername()));
+                CommandHandler.sendMessage(targetPlayer, LanguageHelper.reader("changeFailed", UserName));
             }
             else {
-                Grasscutter.getLogger().info(LanguageHelper.reader("changeFailed", targetPlayer.getAccount().getUsername()));
+                Grasscutter.getLogger().info(LanguageHelper.reader("changeFailed", UserName));
             }
         }
     }
