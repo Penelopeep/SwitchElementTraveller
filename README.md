@@ -21,7 +21,7 @@ I just changed it to plugin and added multilanguage support. <br>
 - tingtong#5633 and <a href="https://github.com/millet6">millet6</a> for Chinese translation
 - Praë#0009 for French translations
 - Dark master#9831 for Arabic translations
-- <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617>2211010617</a> for motivating me to finally making constellation picker
+- <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617">2211010617</a> for motivating me to finally making constellation picker
 
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 
