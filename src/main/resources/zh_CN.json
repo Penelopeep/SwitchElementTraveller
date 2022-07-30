@@ -1,5 +1,5 @@
 {
-    "usage": "用法：/se 或者 /switchelement <元素>",
+    "usage": "用法：/se 或者 /switchelement <元素> [命座等级0-6](无则继承当前命座等级)",
     "consoleUsage": "控制台无法调用SwitchElement命令",
     "invalidElement": "无效的元素",
     "changeSuccess": "已成功将旅行者更改为 %s",

@@ -18,7 +18,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-@Command(label = "switchelement",usage="anemo|geo|electro|dendro",aliases = {"se"}, threading = true)
+@Command(label = "switchelement",usage="anemo|geo|electro|dendro|white|fire|water|ice|",aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
 
     @Nullable
@@ -48,7 +48,9 @@ public class SwitchElement implements CommandHandler {
         try{
             if (i<0){
             i=avatar.getTalentIdList().size();
-        }
+        } else if (i>6) {
+                i=6;
+            }
         }catch (Exception e){
             i=0;
         }
@@ -90,9 +92,11 @@ public class SwitchElement implements CommandHandler {
         int level=-1;
         if (args.size() >1) {
             try {
-                level=Integer.getInteger(args.get(1));
-                if (level>6||level<0){throw new Exception("e");}
-            }catch (Exception e){
+                level=Integer.parseInt(args.get(1));
+                if (level>6||level<0){throw new Exception("");}
+            }
+            catch (Exception e)
+            {
                 String outmes=String.format(
                         LanguageHelper.reader("errorint",UserName)
                         ,args.get(1));
@@ -103,9 +107,6 @@ public class SwitchElement implements CommandHandler {
                     Grasscutter.getLogger().info(outmes);
                 }
             }
-
-
-            return;
         }
 
         boolean maleSuccess = false;

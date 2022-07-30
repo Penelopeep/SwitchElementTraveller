@@ -22,7 +22,7 @@ public enum Element {
         this.girlId = 700+ElementId;
     }
     public String getname(String Username){
-        return  LanguageHelper.reader(name(), Username)+String.valueOf(plv);
+        return  LanguageHelper.reader(name(), Username)+"lv"+String.valueOf(plv);
     }
     public int getTalentId(int index) {
         return (this.ElementId+3)*10+index+1;
