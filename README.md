@@ -45,7 +45,7 @@ For dendro you need to have:
 
 ## Building
 I don't know why would you want to build it but:
-1. Clone project with <b>git clone https://github.com/Penelopeep/SwitchElementTraveller.git </b>
+1. Clone project with `git clone https://github.com/Penelopeep/SwitchElementTraveller.git`
 2. Download maven from apache website
 3. Open command prompt/powershell in your project folder (Sorry Linux and MacOS users, you'll need to find your own way for this)
 4. Run <b>mvn package</b>
