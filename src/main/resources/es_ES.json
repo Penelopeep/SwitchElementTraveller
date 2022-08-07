@@ -1,8 +1,8 @@
 {
-    "usage": "Usage: /se or /switchelement <element>",
-    "invalidElement": "Invalid element",
-    "changeSuccess": "Successfully changed traveller to %s",
-    "changeFailed": "Failed to change the element",
-    "failedSuccess": "Successfully changed traveller to %s, but failed to reload scene. Manually reload scene to see the changed",
-    "invalidCons": "Invalid constellation number"
+    "usage": "Uso: /se o /switchelement <elemento>",
+    "invalidElement": "Elemento inválido",
+    "changeSuccess": "Viajero cambiado con éxito a %s",
+    "changeFailed": "Error al cambiar de elemento",
+    "failedSuccess": "Viajero cambiado con éxito a %s, pero hubo un error al recargar el escenario. Recarga el escenario manualmente para ver los cambios",
+    "invalidCons": "Número de constelación inválido"
 }
