@@ -3,7 +3,6 @@ Just dm me please: <b>Penelopeep#7963</b>
 
 # Looking for help: <br>
 Since with the newest update I added multi-language support now I need translators for missing languages:<br>
-- es-ES
 - ro-RO
 - zh-TW <br>
 
@@ -21,6 +20,7 @@ I just changed it to plugin and added multilanguage support. <br>
 - tingtong#5633 and <a href="https://github.com/millet6">millet6</a> for Chinese translation
 - Praë#0009 for French translations, help with traveller constellation and for being awesome!
 - Dark master#9831 for Arabic translations
+- <a href="https://github.com/RBNXI">RBNXI</a> for Spanish translation 
 - <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617">2211010617</a> for motivating me to finally making constellation picker
 
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
