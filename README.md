@@ -1,5 +1,5 @@
 ## DON'T POST PLUGIN ISSUES ON OFFICIAL GC GITHUB PAGE OR I'LL FIND YOU AND MAKE HELL OUT OF YOUR LIFE
-Just dm me please: <b>Penelopeep#7963</b>
+Just dm me please: <b><a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a></b>
 
 # Looking for help: <br>
 Since with the newest update I added multi-language support now I need translators for missing languages:<br>
@@ -7,7 +7,7 @@ Since with the newest update I added multi-language support now I need translato
 - zh-TW <br>
 
 The task is simple, I just need you to translate 6 lines of text <br>
-<a href="https://github.com/Penelopeep/SwitchElementTraveller/blob/Main/src/main/resources/en_US.json">The file to translate is this</a> and translated one send me on discord <b>Penelopeep#7963</b>, or make pull request if you want ¯\\_(ツ)_/¯ <br>
+<a href="https://github.com/Penelopeep/SwitchElementTraveller/blob/Main/src/main/resources/en_US.json">The file to translate is this</a> and translated one send me on discord <b><a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a></b>, or make pull request if you want ¯\\_(ツ)_/¯ <br>
 You'll be included in this readme<br>
 Also, I updated one command and translated it with Google Translator, let me know if it's bad.
 
@@ -55,4 +55,4 @@ I don't know why would you want to build it but:
 The plugin is based on plugin template from Grasscutters GitHub.
 
 #### Also this code is ugly, don't look, it's my first time trying things is java
-#### If you have any question then dm me: Penelopeep#7963
+#### If you have any question then dm me: <a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a>
