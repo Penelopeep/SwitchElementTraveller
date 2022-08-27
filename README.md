@@ -27,7 +27,7 @@ I just changed it to plugin and added multilanguage support. <br>
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 
 ## Usage
-Use <b>/se <element> or /switchelement <element> <constellation number[0-6]></b><br>
+Use <b>/se {element} or /switchelement {element} <constellation number[0-6]></b><br>
 Elements: <b>white/anemo/geo/electro/dendro</b> <br>
 white = no element <br>
 Also you can use alternative names:
