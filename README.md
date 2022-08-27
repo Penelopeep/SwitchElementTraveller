@@ -1,5 +1,14 @@
 ## If you have error like this below with plugin then use <a href="https://cdn.discordapp.com/attachments/1012424860120649809/1012989879216521247/Switchelement-without-cons.jar">this version without constellation picker</a> and use /setconst to set constellations.
 ![unknown](https://user-images.githubusercontent.com/81880849/187020549-44e9e896-08c1-422b-89e7-f287ef437457.png)
+
+## For cultivation users:
+Currently resources are broken and you can't download the newest version of Grasscutter resources. Because of that dendro traveller won't work (it changes, but skill and normal attacks won't work). For that here's guide how to fix it:
+
+- Use win+r and paste this: `%appdata%\cultivation\grasscutter\resources\BinOutput\AbilityGroup\AbilityGroup_Other_PlayerElementAbility.json`
+> (for non-windows server look into grasscutter folder\resources\BinOutput\AbilityGroup\ for AbilityGroup_Other_PlayerElementAbility.json file)
+- Then into this file paste entire code from there: https://raw.githubusercontent.com/Koko-boya/Grasscutter_Resources/bcddce5358fee45178c514c7432f6a19698e7384/Resources/BinOutput/AbilityGroup/AbilityGroup_Other_PlayerElementAbility.json
+- Restart server
+
 If you have any question then dm me: <a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a>
 
 # Looking for help: <br>
@@ -38,11 +47,6 @@ Also you can use alternative names:
 - <b>Hydro</b>: Water
 - <b>Pyro</b>: Fire
 - <b>White</b>: Common
-
-For dendro you need to have:
-1. Genshin 2.8.5 beta
-2. Grasscutter supporting that version
-
 
 ## Building
 I don't know why would you want to build it but:
