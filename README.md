@@ -1,4 +1,4 @@
-## If you have a this problem below with plugin then use <a href="https://cdn.discordapp.com/attachments/1012424860120649809/1012989879216521247/Switchelement-without-cons.jar">this version without constellation picker</a> and use /setconst to set constellations.
+## If you have error like this below with plugin then use <a href="https://cdn.discordapp.com/attachments/1012424860120649809/1012989879216521247/Switchelement-without-cons.jar">this version without constellation picker</a> and use /setconst to set constellations.
 ![unknown](https://user-images.githubusercontent.com/81880849/187020549-44e9e896-08c1-422b-89e7-f287ef437457.png)
 If you have any question then dm me: <a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a>
 
