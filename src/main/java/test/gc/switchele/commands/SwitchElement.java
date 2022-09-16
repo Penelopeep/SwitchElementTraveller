@@ -12,18 +12,11 @@ import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.utils.Position;
 import test.gc.switchele.ConstellationsHandler;
 import test.gc.switchele.LanguageHelper;
-import test.gc.switchele.VersionSupportHelper;
 
-import javax.annotation.Nullable;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 
 @Command(label = "switchelement",usage="anemo|geo|electro|dendro",aliases = {"se"}, threading = true)
 public class SwitchElement implements CommandHandler {
-
-    @Nullable
-    private static final Method getPositionMethod = VersionSupportHelper.getPositionMethod();
 
     private Element getElementFromString(String elementString) {
         return switch (elementString.toLowerCase()) {
@@ -101,25 +94,15 @@ public class SwitchElement implements CommandHandler {
             ConstellationsHandler.change(targetPlayer, element, constellation);
         }
         if (maleSuccess || femaleSuccess) {
-            if (getPositionMethod == null) {
-                String message = String.format(LanguageHelper.reader("failedSuccess", UserName), element.name());
-                if (sender != null) {
-                    CommandHandler.sendMessage(targetPlayer, message);
-                }
-                else {
-                    Grasscutter.getLogger().info(message);
-                }
-                return;
-            }
             int scene = targetPlayer.getSceneId();
             String message;
             try {
-                Position targetPlayerPos = (Position) getPositionMethod.invoke(targetPlayer);
+                Position targetPlayerPos = targetPlayer.getPosition();
                 targetPlayer.getWorld().transferPlayerToScene(targetPlayer, 1, targetPlayerPos);
                 targetPlayer.getWorld().transferPlayerToScene(targetPlayer, scene, targetPlayerPos);
                 targetPlayer.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(targetPlayer));
                 message = String.format(LanguageHelper.reader("changeSuccess", UserName), element.name());
-            } catch (IllegalAccessException | InvocationTargetException e) {
+            } catch (Exception e) {
                 message = String.format(LanguageHelper.reader("failedSuccess", UserName), element.name());
             }
             if (sender != null) {
