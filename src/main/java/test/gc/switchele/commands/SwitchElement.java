@@ -88,10 +88,10 @@ public class SwitchElement implements CommandHandler {
         boolean femaleSuccess = false;
         if(targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
             maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
-            ConstellationsHandler.change(targetPlayer, element, constellation);
+            ConstellationsHandler.change(targetPlayer, constellation);
         } else if (targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
             femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
-            ConstellationsHandler.change(targetPlayer, element, constellation);
+            ConstellationsHandler.change(targetPlayer, constellation);
         }
         if (maleSuccess || femaleSuccess) {
             int scene = targetPlayer.getSceneId();
