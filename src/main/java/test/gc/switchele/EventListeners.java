@@ -1,7 +1,6 @@
 package test.gc.switchele;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReq;
@@ -40,13 +39,12 @@ public final class EventListeners {
             try {
                 UseItemReq req = UseItemReq.parseFrom(event.getPacketData());
                 GameItem useItem = event.getGameSession().getServer().getInventorySystem().useItem(event.getGameSession().getPlayer(), req.getTargetGuid(), req.getGuid(), req.getCount(), req.getOptionIdx());
-                Grasscutter.getLogger().info(String.valueOf(useItem.getItemId()));
                 SwitchElement se = new SwitchElement();
                 Player player = event.getGameSession().getPlayer();
                 ConstellationsHandler.change(player, 6);
                 List<String> args = new ArrayList<>();
                 args.add(getElementFromId(useItem.getItemId()));
-                se.execute(player,player, args);
+                se.execute(null, player, args);
             } catch (InvalidProtocolBufferException e) {
                 throw new RuntimeException(e);
             }
