@@ -3,6 +3,7 @@ package test.gc.switchele;
 import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReq;
 import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.server.event.HandlerPriority;
@@ -35,7 +36,7 @@ public final class EventListeners {
         };
     }
     public static void onPacket(ReceivePacketEvent event) {
-        if (event.getPacketId() == 690){
+        if (event.getPacketId() == PacketOpcodes.UseItemReq){
             try {
                 UseItemReq req = UseItemReq.parseFrom(event.getPacketData());
                 GameItem useItem = event.getGameSession().getServer().getInventorySystem().useItem(event.getGameSession().getPlayer(), req.getTargetGuid(), req.getGuid(), req.getCount(), req.getOptionIdx());
