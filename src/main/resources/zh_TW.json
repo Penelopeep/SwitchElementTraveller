@@ -1,0 +1,8 @@
+{
+    "usage": "用法: /se 或 /switchelement <元素>",
+    "invalidElement": "無效的元素",
+    "changeSuccess": "已成功將旅行者更改為 %s",
+    "changeFailed": "更改元素失敗",
+    "failedSuccess": "已成功將旅行者更改為 %s, 但無法重新加載場景. 請手動重新加載場景來查看更改後的效果",
+    "invalidCons": "無效的命座數值"
+}
