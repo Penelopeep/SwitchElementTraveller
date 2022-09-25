@@ -1,7 +1,6 @@
 # Looking for help: <br>
 Since with the newest update I added multi-language support now I need translators for missing languages:<br>
-- ro-RO
-- zh-TW <br>
+- ro-RO <br>
 
 The task is simple, I just need you to translate 6 lines of text <br>
 <a href="https://github.com/Penelopeep/SwitchElementTraveller/blob/Main/src/main/resources/en_US.json">The file to translate is this</a> and translated one send me on discord <b><a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a></b>, or make pull request if you want ¯\\_(ツ)_/¯ <br>
@@ -45,6 +44,7 @@ I don't know why would you want to build it but:
 - Dark master#9831 for Arabic translations
 - <a href="https://github.com/RBNXI">RBNXI</a> for Spanish translation
 - <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617">2211010617</a> for motivating me to finally making constellation picker
+- seria#5334 for Traditional Chinese translation
 
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 ### Version
