@@ -12,6 +12,19 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
          
+    <build>
+         <plugins>
+                  <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <version>2.3.1</version>
+                  <configuration>
+                           <outputDirectory>../libs</outputDirectory>
+                  </configuration>
+         </plugin>
+    </plugins>
+  </build>
+         
     <repositories>
         <!-- 
         While Grasscutter is on Maven Central, we include Sonatype to update quickly.
