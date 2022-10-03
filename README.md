@@ -13,6 +13,7 @@ I just changed it to plugin and added multilanguage support. <br>
 
 ## Installation
 Download the newest release from [releases pages](https://github.com/Penelopeep/SwitchElementTraveller/releases) \
+Or download and extract `jar` file from zip in the newest package *(may include functions not available in release package)* from [actions](https://github.com/Penelopeep/SwitchElementTraveller/actions) \
 Place `jar` file inside `GrasscutterFolder/Plugins` \
 Restart server if it's running already
 
