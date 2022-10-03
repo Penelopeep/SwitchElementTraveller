@@ -19,7 +19,7 @@
                   <artifactId>maven-jar-plugin</artifactId>
                   <version>2.3.1</version>
                   <configuration>
-                           <outputDirectory>../libs</outputDirectory>
+                           <outputDirectory>../output</outputDirectory>
                   </configuration>
          </plugin>
     </plugins>
