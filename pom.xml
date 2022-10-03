@@ -8,8 +8,8 @@
     <version>1</version> <!-- The template's version corresponds to the latest API version. -->
 
     <properties>
-        <maven.compiler.source>10</maven.compiler.source>
-        <maven.compiler.target>10</maven.compiler.target>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
     </properties>
          
     <repositories>
