@@ -40,12 +40,13 @@ I don't know why would you want to build it but:
 ### Credits:
 - hartie95#8966 for amazing help with rewriting code
 - RomanF#0609 for Russian translation
-- tingtong#5633 and <a href="https://github.com/millet6">millet6</a> for Chinese translation
+- tingtong#5633 and <a href="https://github.com/millet6">millet6</a> for Chinese translation.
+- [Julienraptor01](https://github.com/Julienraptor01) for correcting French translation.
 - Praë#0009 for French translations, help with traveller constellation and for being awesome!
-- Dark master#9831 for Arabic translations
-- <a href="https://github.com/RBNXI">RBNXI</a> for Spanish translation
-- <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617">2211010617</a> for motivating me to finally making constellation picker
-- seria#5334 for Traditional Chinese translation
+- Dark master#9831 for Arabic translation.
+- <a href="https://github.com/RBNXI">RBNXI</a> for Spanish translation.
+- <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617">2211010617</a> for motivating me to finally making constellation picker.
+- seria#5334 for Traditional Chinese translation.
 
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 ### Version
