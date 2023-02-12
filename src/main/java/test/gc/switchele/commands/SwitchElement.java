@@ -26,7 +26,7 @@ public class SwitchElement implements CommandHandler {
             case "wind", "anemo", "air" -> Element.anemo;
             case "ice", "cryo" -> Element.cryo;
             case "rock", "geo" -> Element.geo;
-            case "electro" -> Element.electro;
+            case "electro", "lightning" -> Element.electro;
             case "grass", "dendro", "plant" -> Element.dendro;
             default -> null;
         };
@@ -40,7 +40,11 @@ public class SwitchElement implements CommandHandler {
         }
         avatar.setSkillDepotData(skillDepot);
         avatar.setCurrentEnergy(1000);
+        avatar.recalcConstellations();
+        avatar.recalcStats();
         avatar.save();
+        avatar.recalcConstellations();
+        avatar.recalcStats();
         return true;
     }
     @Override
