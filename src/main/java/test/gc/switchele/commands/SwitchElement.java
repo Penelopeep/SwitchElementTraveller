@@ -8,10 +8,10 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.server.packet.send.PacketAvatarSkillDepotChangeNotify;
 import test.gc.switchele.ConstellationsHandler;
 import test.gc.switchele.LanguageHelper;
+import test.gc.switchele.Switchele;
 
 import java.util.List;
 
@@ -32,14 +32,14 @@ public class SwitchElement implements CommandHandler {
         };
     }
 
-    private boolean changeAvatarElement(Player sender, int avatarId, Element element) {
-        Avatar avatar = sender.getAvatars().getAvatarById(avatarId);
-        AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(element.getSkillRepoId(avatarId));
-        if (avatar == null || skillDepot == null) {
+    private boolean changeAvatarElement(Player sender, Avatar avatar, Element element) {
+        AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(element.getSkillRepoId(avatar.getAvatarId()));
+        if (skillDepot == null) {
             return false;
         }
         avatar.setSkillDepotData(skillDepot);
         avatar.setCurrentEnergy(1000);
+        //Recalc should be before or after save? Should I even safe????
         avatar.recalcConstellations();
         avatar.recalcStats();
         avatar.save();
@@ -49,6 +49,7 @@ public class SwitchElement implements CommandHandler {
     }
     @Override
     public void execute(Player sender,Player targetPlayer, List<String> args) {
+        Switchele.getInstance().reloadConfig(); //Why on every request? Cos I don't like restarting server
         String UserName=targetPlayer.getAccount().getUsername();
         if (args.size() < 1) {
             if (sender != null) {
@@ -69,8 +70,8 @@ public class SwitchElement implements CommandHandler {
             }
             return;
         }
-        int constellation = 0;
-        if (args.size() > 1) {
+        int constellation =  Switchele.getPluginConfig().DefaultConstellation; //I guess having c6 is better than c0
+        if (args.size() > 1 && Switchele.getPluginConfig().EnableConstellation) {
             try {
                 constellation = Integer.parseInt(args.get(1));
                 if (constellation>6){
@@ -90,21 +91,19 @@ public class SwitchElement implements CommandHandler {
         }
         boolean maleSuccess = false;
         boolean femaleSuccess = false;
-        if(targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
-            maleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_MALE, element);
-            ConstellationsHandler.change(targetPlayer, element, constellation);
-        } else if (targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar().getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
-            femaleSuccess = changeAvatarElement(targetPlayer, GameConstants.MAIN_CHARACTER_FEMALE, element);
+        Avatar currAvatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
+        if(currAvatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
+            maleSuccess = changeAvatarElement(targetPlayer, currAvatar, element);
+        } else if (currAvatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
+            femaleSuccess = changeAvatarElement(targetPlayer, currAvatar, element);
+        }
+        if(Switchele.getPluginConfig().EnableConstellation){
             ConstellationsHandler.change(targetPlayer, element, constellation);
         }
         if (maleSuccess || femaleSuccess) {
-            int scene = targetPlayer.getSceneId();
             String message;
             try {
-                Position targetPlayerPos = targetPlayer.getPosition();
-                targetPlayer.getWorld().transferPlayerToScene(targetPlayer, 1, targetPlayerPos);
-                targetPlayer.getWorld().transferPlayerToScene(targetPlayer, scene, targetPlayerPos);
-                targetPlayer.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(targetPlayer));
+                targetPlayer.sendPacket(new PacketAvatarSkillDepotChangeNotify(currAvatar));
                 message = String.format(LanguageHelper.reader("changeSuccess", UserName), element.name());
             } catch (Exception e) {
                 message = String.format(LanguageHelper.reader("failedSuccess", UserName), element.name());
