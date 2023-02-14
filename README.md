@@ -47,6 +47,7 @@ I don't know why would you want to build it but:
 - <a href="https://github.com/RBNXI">RBNXI</a> for Spanish translation.
 - <a href="https://github.com/924-YE">924-YE</a> and <a href="https://github.com/2211010617">2211010617</a> for motivating me to finally making constellation picker.
 - seria#5334 for Traditional Chinese translation.
+- Yuuki for a better way of applying new element
 
 - Original pr: https://github.com/Grasscutters/Grasscutter/pull/1287
 ### Version
