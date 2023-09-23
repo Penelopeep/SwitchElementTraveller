@@ -5,7 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarSkillDepotChangeNotify;
@@ -32,14 +32,14 @@ public class SwitchElement implements CommandHandler {
         };
     }
 
-    private boolean changeAvatarElement(Player sender, Avatar avatar, Element element) {
+    private boolean changeAvatarElement(Avatar avatar, Element element) {
         AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(element.getSkillRepoId(avatar.getAvatarId()));
         if (skillDepot == null) {
             return false;
         }
         avatar.setSkillDepotData(skillDepot);
         avatar.setCurrentEnergy(1000);
-        //Recalc should be before or after save? Should I even safe????
+        //Recalc should be before or after save? Should I even save????
         avatar.recalcConstellations();
         avatar.recalcStats();
         avatar.save();
@@ -93,9 +93,9 @@ public class SwitchElement implements CommandHandler {
         boolean femaleSuccess = false;
         Avatar currAvatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
         if(currAvatar.getAvatarId() == GameConstants.MAIN_CHARACTER_MALE) {
-            maleSuccess = changeAvatarElement(targetPlayer, currAvatar, element);
+            maleSuccess = changeAvatarElement(currAvatar, element);
         } else if (currAvatar.getAvatarId() == GameConstants.MAIN_CHARACTER_FEMALE) {
-            femaleSuccess = changeAvatarElement(targetPlayer, currAvatar, element);
+            femaleSuccess = changeAvatarElement(currAvatar, element);
         }
         if(Switchele.getPluginConfig().EnableConstellation){
             ConstellationsHandler.change(targetPlayer, element, constellation);

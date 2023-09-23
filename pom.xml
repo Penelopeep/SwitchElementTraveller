@@ -17,17 +17,15 @@
         While Grasscutter is on Maven Central, we include Sonatype to update quickly.
         Usually, builds take an hour to go from Sonatype to Maven Central.
          -->
-        <repository>
-            <id>sonatype</id>
-            <url>https://s01.oss.sonatype.org/content/groups/public/</url>
-        </repository>
     </repositories>
     
     <dependencies>
         <dependency>
-            <groupId>xyz.grasscutters</groupId> <!-- Versions below 1.0.3-dev are on 'tech.xigam' -->
+            <groupId>xyz.grasscutters</groupId>
             <artifactId>grasscutter</artifactId>
-            <version>1.4.6</version> <!-- Replace with the latest version of the API. -->
+            <scope>system</scope>
+            <version>1.7.1</version>
+            <systemPath>${env.USERPROFILE}\Desktop\Grasscutter4.0\grasscutter.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

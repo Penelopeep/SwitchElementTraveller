@@ -1,5 +1,3 @@
-# [For any unstable quest branch users \(and any forks of it for example Yuuki's original grasscutter\) use this hotfix](https://cdn.discordapp.com/attachments/1044568735488421929/1110241499628707860/Switchelement.jar)
-
 # Looking for help: <br>
 Since with the newest update I added multi-language support now I need translators for missing languages:<br>
 - ro-RO <br>
@@ -11,7 +9,7 @@ Also, I updated one command and translated it with Google Translator, let me kno
 
 # SwitchElement
 Simple, mostly stolen script from one of pr in official gc, which allows to quickly change traveller element.<br>
-I just changed it to plugin and added multilanguage support. <br>
+I just changed it to plugin and added multi-language support. <br>
 
 ## Installation
 Download the newest release from [releases pages](https://github.com/Penelopeep/SwitchElementTraveller/releases) \

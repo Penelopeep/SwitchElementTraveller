@@ -3,11 +3,7 @@
   "description": "Smoll plugin to make my life easier",
   "version": "1",
   "authors": [ "One guy from grasscutter github (feat. Penelopeep)" ],
+  "api": 2,
 
-  "mainClass": "test.gc.switchele.Switchele",
-
-  "comments": [
-    "Never gonna give you up.",
-    "Never gonna let you down."
-  ]
+  "mainClass": "test.gc.switchele.Switchele"
 }
